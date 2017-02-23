@@ -1,0 +1,38 @@
+{
+    "g1":{
+        
+        "attractiveness":8,
+        "intelligence":6,
+        "maintenance":300,
+        "committed":false,
+        "boyname":""
+
+    },
+    "g2":{
+        
+        "attractiveness":15,
+        "intelligence":7,
+        "maintenance":450,
+        "committed": false,
+        "boyname":""
+
+    },
+    "g3":{
+        
+        "attractiveness":11,
+        "intelligence":7,
+        "maintenance":700,
+        "committed":false,
+        "boyname":""
+
+    },
+    "g4":{
+    
+        "attractiveness":10,
+        "intelligence":9,
+        "maintenance":900,
+        "committed":false,
+        "boyname":""
+
+    }
+}
