@@ -1,0 +1,4 @@
+b1 is dating g1
+b2 is dating g2
+b3 is dating g3
+b7 is dating g4

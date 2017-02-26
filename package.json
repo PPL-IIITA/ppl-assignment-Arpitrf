@@ -1,0 +1,15 @@
+{
+  "name": "ppl-temp",
+  "version": "1.0.0",
+  "description": "-Enrollment Number : IIT2015089 -The given files constitute question1 and question2 of the given assignment. -The assignment has been completed using javascript. -The files must be compiled using node js compiler. -Executing the q1.js file will give output of question1. -Executing the q2.js file will give output of question2. -the documentation is provided in the out folder(index.html). -Input has been taken from .json files. -Documentation has been generated using jsdoc. -The node version used to compile the file is 7.4.0. -The class diagram for the corresponding questions has been provided in the \"class diagram.png\" file.",
+  "main": "boy_class.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arpitrf",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {}
+}

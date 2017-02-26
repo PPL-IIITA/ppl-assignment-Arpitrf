@@ -6,8 +6,8 @@
         "budget":500,
         "minAtt":6,
         "committed":false,
-        "girlname":""
-
+        "girlname":"",
+        "gifts":[]
     },
     "b2":{
         
@@ -16,7 +16,9 @@
         "budget":600,
         "minAtt":7,
         "committed":false,
-        "girlname":""
+        "girlname":"",
+        "gifts":[]
+
 
     },
     "b3":{
@@ -26,7 +28,9 @@
         "budget":900,
         "minAtt":8,
         "committed":false,
-        "girlname":""
+        "girlname":"",
+        "gifts":[]
+
 
     },
     "b4":{
@@ -36,7 +40,8 @@
         "budget":400,
         "minAtt":9,
         "committed":false,
-        "girlname":""
+        "girlname":"",
+        "gifts": []
 
     },
     "b5":{
@@ -46,7 +51,9 @@
         "budget":780,
         "minAtt":8,
         "committed":false,
-        "girlname":""
+        "girlname":"",
+        "gifts":[]
+
 
     },
     "b6":{
@@ -56,7 +63,9 @@
         "budget":500,
         "minAtt":10,
         "committed":false,
-        "girlname":""
+        "girlname":"",
+        "gifts":[]
+
 
     },
     "b7":{
@@ -66,7 +75,9 @@
         "budget":1000,
         "minAtt":5,
         "committed":false,
-        "girlname":""
+        "girlname":"",
+        "gifts":[]
+
 
     }
 }
