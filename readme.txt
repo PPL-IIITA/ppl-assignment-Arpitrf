@@ -8,7 +8,7 @@
 -Input has been taken from .json files.
 -Documentation has been generated using jsdoc.
 -The node version used to compile the file is 7.4.0.
--The class diagram for the corresponding questions has been provided in the "class diagram.png" file.
+-The class diagram for the corresponding questions has been provided in the "class diagram.pdf" file.
 
 
 
