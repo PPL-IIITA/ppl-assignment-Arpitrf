@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: q7.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: q7.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var arr = require('./pair.js')
+var arr1 = require('./data/q7input.json')
+var readline = require('readline');
+var rl = readline.createInterface(process.stdin, process.stdout)
+var fs = require('fs');
+var imp;
+rl.question('choose the type of implementation you want', function (answer) {
+    imp = answer;
+    //console.log(imp);
+    execute();
+
+})
+/**function to find girlfriends of a given set of boys with three possible implementations  */
+function execute() {
+    //console.log("hello");
+    switch (imp) {
+        case "1":
+            //console.log("hello")
+            for (i = 0; i &lt; 4; i++) {
+                for (j = 0; j &lt; 7; j++) {
+                    //console.log("hello")
+                    if (arr1["i" + i].name == arr.boysarr[j].name) {
+                        console.log(arr.boysarr[j].girlname)
+                        break;
+                    }
+                }
+            }
+            break;
+
+        case "2":
+            arr.boysarr.sort(function (a, b) {
+                return parseFloat(a.name) - parseFloat(b.name);
+            });
+            //var arr2 = arr.boysarr;
+            function binarysearch(arr2, i) {
+                var mid = Math.floor(arr2.length / 2);
+                var name = Object.keys(arr2)[0];
+                if (name === i) {
+                    //console.log('match', arr.boysarr[mid], i);
+                    return arr2["b"+mid].girlname;
+                } else if (name &lt; i &amp;&amp; arr2.length > 1) {
+                    //console.log('mid lower', arr.boysarr[mid], i);
+                    return binarysearch(arr2.splice(mid, Number.MAX_VALUE), i);
+                } else if (name > i &amp;&amp; arr2.length > 1) {
+                    //console.log('mid higher', arr.boysarr[mid], i);
+                    return binarysearch(arr2.splice(0, mid), i);
+                } else {
+                    //console.log('not here', i);
+                    return -1;
+                }
+            }
+            for(i=0;i&lt;4;i++)
+            {
+                var girlfriend = binarysearch(arr.boysarr,arr1["i"+i].name)
+                console.log(girlfriend);
+            }
+            break;
+
+        case "3": {
+            var jsonobj = '{ \n'
+            for (i = 0; i &lt; 7; i++) {
+                if (i &lt; 6)
+                    jsonobj = jsonobj + '"b' + i + '"' + ':' + '{ \n' + '"gname"' + ':' + '"' + arr.boysarr[i].girlname + '"' + ' \n ' + '}, \n'
+                if (i == 6)
+                    jsonobj = jsonobj + '"b' + i + '"' + ':' + '{ \n' + '"gname"' + ':' + '"' + arr.boysarr[i].girlname + '"' + ' \n ' + '} \n'
+
+            }
+            jsonobj = jsonobj + '}'
+            fs.writeFile("./q7hash.json", jsonobj, function (err) {
+                if (err) {
+                    console.log(err);
+                }
+                else
+                    execute1()
+            })
+            /**function to create a hash table  */
+            function execute1() {
+                var arr2 = require("./q7hash.json")
+                for (i = 0; i &lt; 4; i++) {
+                    console.log("b" + i + ":" + arr2["b" + i].gname);
+                }
+            }
+
+
+
+        }
+        break;
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="boy.html">boy</a></li><li><a href="couple.html">couple</a></li><li><a href="create.html">create</a></li><li><a href="gift.html">gift</a></li><li><a href="Giftcreate.html">Giftcreate</a></li><li><a href="girl.html">girl</a></li></ul><h3>Global</h3><ul><li><a href="global.html#assign">assign</a></li><li><a href="global.html#breakup">breakup</a></li><li><a href="global.html#compatibility">compatibility</a></li><li><a href="global.html#createboy">createboy</a></li><li><a href="global.html#driver">driver</a></li><li><a href="global.html#driver1">driver1</a></li><li><a href="global.html#execute">execute</a></li><li><a href="global.html#gifting">gifting</a></li><li><a href="global.html#happiness">happiness</a></li><li><a href="global.html#newpair">newpair</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Apr 10 2017 00:18:51 GMT+0530 (IST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

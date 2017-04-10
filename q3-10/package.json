@@ -1,0 +1,23 @@
+{
+  "name": "ppl-assignment-piano-man",
+  "version": "1.0.0",
+  "description": "ppl_assignment",
+  "main": "assign.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PPL-IIITA/ppl-assignment-piano-man.git"
+  },
+  "author": "ICM2015003",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PPL-IIITA/ppl-assignment-piano-man/issues"
+  },
+  "homepage": "https://github.com/PPL-IIITA/ppl-assignment-piano-man#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {}
+}

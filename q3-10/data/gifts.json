@@ -1,0 +1,114 @@
+{
+    "p0":{
+        "type":"essential",
+        "price":50,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p1":{
+        "type":"luxury",
+        "price":100,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p2":{
+        "type":"utility",
+        "price":60,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p3":{
+        "type":"essential",
+        "price":35,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p4":{
+        "type":"luxury",
+        "price":200,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p5":{
+        "type":"utility",
+        "price":75,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p6":{
+        "type":"essential",
+        "price":45,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p7":{
+        "type":"luxury",
+        "price":300,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p8":{
+        "type":"utility",
+        "price":70,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p9":{
+        "type":"essential",
+        "price":25,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p10":{
+        "type":"luxury",
+        "price":250,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p11":{
+        "type":"utility",
+        "price":40,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p12":{
+        "type":"essential",
+        "price":35,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p13":{
+        "type":"luxury",
+        "price":150,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p14":{
+        "type":"utility",
+        "price":40,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    },
+    "p15":{
+        "type":"essential",
+        "price":30,
+        "value":" ",
+        "fro":" ",
+        "to":" "
+    }
+}
