@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: make_boys.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: make_boys.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var b_json = require('./boys.json');
+var g_json = require('./girls.json');
+/**
+ * this is BoyClass. (base class)
+ */
+
+ /**
+ * @param {string} name 
+ * @param {integer} attractiveness 
+ * @param {integer} intelligence 
+ * @param {integer} budget 
+ * @param {integer} minAtt
+ * @params {boolean} committed
+ * @param {string} girlname 
+ */
+class boy {
+	constructor(name, attractiveness, intelligence, budget, minAtt, committed, girlname) {
+		this.name = name;
+		this.attractiveness = attractiveness;
+		this.intelligence = intelligence;
+		this.budget = budget;
+		this.minAtt = minAtt;
+		this.committed = committed;
+		this.girlname = girlname;
+		this.gifts = new Array(5);
+	}
+
+	allocate(arr_boys, arr_gifts, i){}
+	calc_happiness(arr_boys, arr_girls, i){}
+}
+
+
+
+/**
+ * this is miser Class. (derived class)
+ */
+
+ /**
+ * @param {string} name 
+ * @param {integer} attractiveness 
+ * @param {integer} intelligence 
+ * @param {integer} budget 
+ * @param {integer} minAtt
+ * @params {boolean} committed
+ * @param {string} girlname 
+ */
+
+ class miser extends boy {
+ 	constructor(name, attractiveness, intelligence, budget, minAtt, committed, girlname){
+ 		super(name, attractiveness, intelligence, budget, minAtt, committed, girlname);
+ 	}
+ 	allocate (arr_boys, arr_gifts, i, k, gift_no) {
+ 			var sum_price = 0;
+  			var temp = arr_boys[i].girlname;
+  			var total = g_json[temp].maintenance;
+  			while(sum_price &lt; total) {
+  				sum_price = sum_price + arr_gifts[k.value].price;
+  				arr_boys[i].gifts[gift_no.value++] = arr_gifts[k.value].name;
+  				k.value++; 
+  				}
+  			arr_boys[i]['expenditure'] = sum_price;
+ 	}
+ 	calc_happiness(arr_boys, arr_girls, i){
+ 		var happiness_b = arr_boys[i].budget - arr_boys[i]['expenditure'];
+ 		return happiness_b;
+ 	}
+ }
+
+
+/**
+ * this is generous Class. (derived class)
+ */
+
+ /**
+ * @param {string} name 
+ * @param {integer} attractiveness 
+ * @param {integer} intelligence 
+ * @param {integer} budget 
+ * @param {integer} minAtt
+ * @params {boolean} committed
+ * @param {string} girlname 
+ */
+
+ class generous extends boy{
+ 	constructor(name, attractiveness, intelligence, budget, minAtt, committed, girlname){
+ 		super(name, attractiveness, intelligence, budget, minAtt, committed, girlname);
+ 	}
+
+ 	allocate(arr_boys, arr_gifts, i, k, gift_no) {
+ 		var sum_price = 0;
+  		var budget = arr_boys[i].budget;
+  		while(sum_price &lt; budget) {
+  			sum_price = sum_price + arr_gifts[k.value].price;
+	  		arr_boys[i].gifts[gift_no.value++] = arr_gifts[k.value].name;
+			if(sum_price > budget) {
+				sum_price = sum_price - arr_gifts[k.value++].price;
+				break;
+			}	
+			k.value++;
+  		}
+  		arr_boys[i]['expenditure'] = sum_price;
+ 	}
+	calc_happiness(arr_boys, arr_girls, i) {
+		for(var j = 1 ; j &lt; arr_girls.length ; j++) {
+			if(arr_boys[i].girlname == arr_girls[j].name) 
+				break;
+		}
+ 		var happiness_b = arr_girls[j].calc_happiness(arr_boys[i], arr_girls[j]);
+ 		return happiness_b;
+ 	} 
+ }
+
+
+/**
+ * this is geeky Class. (derived class)
+ */
+
+ /**
+ * @param {string} name 
+ * @param {integer} attractiveness 
+ * @param {integer} intelligence 
+ * @param {integer} budget 
+ * @param {integer} minAtt
+ * @params {boolean} committed
+ * @param {string} girlname 
+ */
+
+ class geeky extends boy {
+	constructor(name, attractiveness, intelligence, budget, minAtt, committed, girlname){
+ 		super(name, attractiveness, intelligence, budget, minAtt, committed, girlname);
+ 	}
+
+
+ 	allocate(arr_boys, arr_gifts, i, k, gift_no) {
+ 		var sum_price = 0;
+  		var temp = arr_boys[i].girlname;
+  		var total = g_json[temp].maintenance;
+  		while(sum_price &lt; total) {
+  			sum_price = sum_price + arr_gifts[k.value].price;
+  			arr_boys[i].gifts[gift_no.value++] = arr_gifts[k.value].name;
+  			k.value++;
+  		}
+  		arr_boys[i]['expenditure'] = sum_price;
+ 	}
+ 	calc_happiness(arr_boys, arr_girls, i){
+		var happiness_b = g_json[arr_boys[i].girlname].intelligence;
+ 		return happiness_b;
+ 	}
+ }
+
+/** @function makeBoyObject
+ * @returns {object}
+ */
+ 
+function makeBoyObject () {
+	var arr_boys = new Array(8);
+	for (var i = 1 ; i &lt; 8; i++) {      
+ 	 	var temp ='b'+i;  
+ 	 	if(i % 3 == 0) 
+      		arr_boys[i] = new miser(temp, b_json['b'+i].attractiveness, b_json['b'+i].intelligence, b_json['b'+i].budget, b_json['b'+i].minAtt, b_json['b'+i].committed, b_json['b'+i].girlname);
+		else if(i % 3 == 1) 
+			arr_boys[i] = new generous(temp, b_json['b'+i].attractiveness, b_json['b'+i].intelligence, b_json['b'+i].budget, b_json['b'+i].minAtt, b_json['b'+i].committed, b_json['b'+i].girlname);
+		else 
+			arr_boys[i] = new geeky(temp, b_json['b'+i].attractiveness, b_json['b'+i].intelligence, b_json['b'+i].budget, b_json['b'+i].minAtt, b_json['b'+i].committed, b_json['b'+i].girlname);
+
+	}  
+	for(var i = 1 ; i &lt; 8 ; i++) {
+		console.log(arr_boys[i]);
+	}
+	return arr_boys;
+}
+module.exports = makeBoyObject();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="boy.html">boy</a></li><li><a href="choosy.html">choosy</a></li><li><a href="couple.html">couple</a></li><li><a href="desperate.html">desperate</a></li><li><a href="essential.html">essential</a></li><li><a href="geeky.html">geeky</a></li><li><a href="generous.html">generous</a></li><li><a href="gifts.html">gifts</a></li><li><a href="girl.html">girl</a></li><li><a href="luxury.html">luxury</a></li><li><a href="miser.html">miser</a></li><li><a href="normal.html">normal</a></li><li><a href="global.html#utility">utility</a></li></ul><h3>Global</h3><ul><li><a href="global.html#fileWrite">fileWrite</a></li><li><a href="global.html#fun2">fun2</a></li><li><a href="global.html#makeBoyObject">makeBoyObject</a></li><li><a href="global.html#makeGifts">makeGifts</a></li><li><a href="global.html#makeGirlObject">makeGirlObject</a></li><li><a href="global.html#utility_q2">utility_q2</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Apr 19 2017 10:27:28 GMT+0530 (IST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

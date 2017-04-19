@@ -1,0 +1,83 @@
+{
+    "b1":{
+        
+        "attractiveness":10,
+        "intelligence":9,   
+        "budget":500,
+        "minAtt":6,
+        "committed":false,
+        "girlname":"",
+        "gifts":[]
+    },
+    "b2":{
+        
+        "attractiveness":15,
+        "intelligence":8,
+        "budget":600,
+        "minAtt":7,
+        "committed":false,
+        "girlname":"",
+        "gifts":[]
+
+
+    },
+    "b3":{
+        
+        "attractiveness":13,
+        "intelligence":6,
+        "budget":900,
+        "minAtt":8,
+        "committed":false,
+        "girlname":"",
+        "gifts":[]
+
+
+    },
+    "b4":{
+    
+        "attractiveness":16,
+        "intelligence":1,
+        "budget":400,
+        "minAtt":9,
+        "committed":false,
+        "girlname":"",
+        "gifts": []
+
+    },
+    "b5":{
+        
+        "attractiveness":17,
+        "intelligence":8,
+        "budget":780,
+        "minAtt":8,
+        "committed":false,
+        "girlname":"",
+        "gifts":[]
+
+
+    },
+    "b6":{
+        
+        "attractiveness":23,
+        "intelligence":4,
+        "budget":500,
+        "minAtt":10,
+        "committed":false,
+        "girlname":"",
+        "gifts":[]
+
+
+    },
+    "b7":{
+        
+        "attractiveness":21,
+        "intelligence":8,
+        "budget":1000,
+        "minAtt":5,
+        "committed":false,
+        "girlname":"",
+        "gifts":[]
+
+
+    }
+}

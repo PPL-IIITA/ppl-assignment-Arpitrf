@@ -1,0 +1,426 @@
+
+
+COUPLES:
+
+b1 is dating g1
+GIFTS:
+p12 essential 235
+p14 utility 240
+p11 utility 240
+
+
+COUPLES:
+
+b2 is dating g2
+GIFTS:
+p6 essential 245
+p8 utility 270
+
+
+COUPLES:
+
+b3 is dating g3
+GIFTS:
+p5 utility 275
+p2 utility 290
+p3 essential 300
+
+
+COUPLES:
+
+b7 is dating g4
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+
+
+COUPLES:
+
+b1 is dating g1
+GIFTS:
+p12 essential 235
+p14 utility 240
+p11 utility 240
+
+
+COUPLES:
+
+b2 is dating g2
+GIFTS:
+p6 essential 245
+p8 utility 270
+
+
+COUPLES:
+
+b3 is dating g3
+GIFTS:
+p5 utility 275
+p2 utility 290
+p3 essential 300
+
+
+COUPLES:
+
+b7 is dating g4
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+
+
+
+0th DAY:
+
+
+
+
+BREAKUPS:
+
+b3 g3 broke up :(
+
+
+COUPLES:
+
+b1 is dating g1
+GIFTS:
+p12 essential 235
+p11 utility 240
+p14 utility 240
+
+
+COUPLES:
+
+b2 is dating g2
+GIFTS:
+p6 essential 245
+p8 utility 270
+
+
+COUPLES:
+
+b3 is dating g3
+GIFTS:
+p5 utility 275
+p2 utility 290
+p3 essential 300
+
+
+COUPLES:
+
+b7 is dating g4
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+
+
+
+0th DAY:
+
+
+
+
+BREAKUPS:
+
+b3 g3 broke up :(
+
+
+
+1th DAY:
+
+
+
+
+BREAKUPS:
+
+b7 g4 broke up :(
+
+
+NEW COUPLES:
+
+b7 is dating g3
+
+
+COUPLES:
+
+b1 is dating g1
+GIFTS:
+p12 essential 235
+p14 utility 240
+p11 utility 240
+
+
+COUPLES:
+
+b2 is dating g2
+GIFTS:
+p6 essential 245
+p8 utility 270
+
+
+COUPLES:
+
+b3 is dating g4
+GIFTS:
+p5 utility 275
+p3 essential 300
+p2 utility 290
+p1 luxury 400
+
+
+COUPLES:
+
+b7 is dating g3
+GIFTS:
+p7 luxury 600
+p13 luxury 640
+
+
+
+0th DAY:
+
+
+
+
+BREAKUPS:
+
+b3 g4 broke up :(
+
+
+
+1th DAY:
+
+
+
+
+BREAKUPS:
+
+b1 g1 broke up :(
+
+
+
+2th DAY:
+
+
+
+
+BREAKUPS:
+
+b2 g2 broke up :(
+
+
+NEW COUPLES:
+
+b2 is dating g1
+
+
+COUPLES:
+
+b1 is dating g1
+GIFTS:
+p12 essential 235
+
+
+COUPLES:
+
+b2 is dating g2
+GIFTS:
+p8 utility 270
+p6 essential 245
+
+
+COUPLES:
+
+b3 is dating g3
+GIFTS:
+p5 utility 275
+p2 utility 290
+p3 essential 300
+
+
+COUPLES:
+
+b7 is dating g4
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+
+
+COUPLES:
+
+b1 is dating g1
+GIFTS:
+p14 utility 240
+p12 essential 235
+p11 utility 240
+
+
+COUPLES:
+
+b2 is dating g2
+GIFTS:
+p6 essential 245
+p8 utility 270
+
+
+COUPLES:
+
+b3 is dating g3
+GIFTS:
+p5 utility 275
+p2 utility 290
+p3 essential 300
+
+
+COUPLES:
+
+b7 is dating g4
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+
+
+
+0th DAY:
+
+
+
+
+BREAKUPS:
+
+b3 g3 broke up :(
+
+
+COUPLES:
+
+b1 is dating g1
+GIFTS:
+p12 essential 235
+p14 utility 240
+p11 utility 240
+
+
+COUPLES:
+
+b2 is dating g2
+GIFTS:
+p6 essential 245
+p8 utility 270
+
+
+COUPLES:
+
+b3 is dating g3
+GIFTS:
+p2 utility 290
+p5 utility 275
+p3 essential 300
+
+
+COUPLES:
+
+b7 is dating g4
+GIFTS:
+p1 luxury 400
+p14 utility 240
+p11 utility 240
+p7 luxury 600
+
+
+
+0th DAY:
+
+
+
+
+BREAKUPS:
+
+b3 g3 broke up :(
+
+
+
+1th DAY:
+
+
+
+
+BREAKUPS:
+
+b7 g4 broke up :(
+
+
+NEW COUPLES:
+
+b7 is dating g3
+
+
+COUPLES:
+
+b1 is dating g1
+GIFTS:
+p12 essential 235
+p14 utility 240
+p11 utility 240
+
+
+COUPLES:
+
+p6 essential 245
+b2 is dating g2
+GIFTS:
+p8 utility 270
+
+
+COUPLES:
+
+b3 is dating g4
+GIFTS:
+p5 utility 275
+p2 utility 290
+p3 essential 300
+p1 luxury 400
+
+
+COUPLES:
+
+b7 is dating g3
+GIFTS:
+p7 luxury 600
+p13 luxury 640
+
+
+
+0th DAY:
+
+
+
+
+BREAKUPS:
+
+b3 g4 broke up :(
+
+
+
+1th DAY:
+
+
+
+
+BREAKUPS:
+
+b1 g1 broke up :(
+
+
+
+2th DAY:
+
+
+
+
+BREAKUPS:
+
+b2 g2 broke up :(
+
+
+NEW COUPLES:
+
+b2 is dating g1

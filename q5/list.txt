@@ -1,0 +1,135 @@
+p12 essential 235
+p14 utility 240
+b6 is dating g2
+GIFTS:
+b5 is dating g2
+GIFTS:
+p11 utility 240
+p6 essential 245
+b4 is dating g2
+GIFTS:
+p8 utility 270
+p5 utility 275
+b2 is dating g2
+GIFTS:
+p2 utility 290
+p3 essential 300
+b3 is dating g2
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+b1 is dating g2
+GIFTS:
+p13 luxury 640
+b7 is dating g2
+GIFTS:
+p10 luxury 650
+p4 luxury 700
+b6 is dating g2
+GIFTS:
+p12 essential 235
+p14 utility 240
+b5 is dating g2
+GIFTS:
+p11 utility 240
+p6 essential 245
+b4 is dating g2
+GIFTS:
+p8 utility 270
+p5 utility 275
+b2 is dating g2
+GIFTS:
+p2 utility 290
+p3 essential 300
+b3 is dating g2
+GIFTS:
+p7 luxury 600
+p1 luxury 400
+b1 is dating g2
+GIFTS:
+p13 luxury 640
+b7 is dating g2
+GIFTS:
+p10 luxury 650
+p4 luxury 700
+b6 is dating g2
+GIFTS:
+p12 essential 235
+p14 utility 240
+b5 is dating g2
+GIFTS:
+p11 utility 240
+p6 essential 245
+b4 is dating g2
+GIFTS:
+p8 utility 270
+p5 utility 275
+b2 is dating g2
+GIFTS:
+p2 utility 290
+p3 essential 300
+b3 is dating g2
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+b1 is dating g2
+GIFTS:
+p13 luxury 640
+b7 is dating g2
+GIFTS:
+p4 luxury 700
+p10 luxury 650
+b6 is dating g2
+GIFTS:
+p12 essential 235
+p14 utility 240
+b5 is dating g2
+GIFTS:
+p11 utility 240
+p6 essential 245
+b4 is dating g2
+GIFTS:
+p8 utility 270
+p5 utility 275
+b2 is dating g2
+GIFTS:
+p2 utility 290
+p3 essential 300
+b3 is dating g2
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+b1 is dating g2
+GIFTS:
+p13 luxury 640
+p10 luxury 650
+b7 is dating g2
+GIFTS:
+p4 luxury 700
+b6 is dating g2
+GIFTS:
+p14 utility 240
+b5 is dating g2
+GIFTS:
+p11 utility 240
+p6 essential 245
+b4 is dating g2
+GIFTS:
+p8 utility 270
+p5 utility 275
+b2 is dating g2
+GIFTS:
+p2 utility 290
+p3 essential 300
+b3 is dating g2
+GIFTS:
+p1 luxury 400
+p7 luxury 600
+b1 is dating g2
+GIFTS:
+p12 essential 235
+p13 luxury 640
+b7 is dating g2
+GIFTS:
+p10 luxury 650
+p4 luxury 700

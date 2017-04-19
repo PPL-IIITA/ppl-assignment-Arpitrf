@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: q6_utility.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: q6_utility.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var arr_boys = require('./make_boys.js');
+var arr_girls = require('./make_girls.js');
+var arr_gifts = require('./make_gifts.js');
+var p_json = require('./gifts.json');
+var g_json = require('./girls.json');
+var fs = require('fs');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+/**
+ * this is coupleClass.
+ */
+
+ /**
+ * @param {string} girl 
+ * @param {string} boy 
+ * @param {flaot} happiness_g 
+ * @param {float} happiness_b
+ * @param {float} happiness_c
+ * @params {float} compatability
+ */
+class couple {
+	constructor(boy, girl, happiness_c, compatability) {
+		this.girl = girl;
+		this.boy = boy;
+		this.happiness_c = happiness_c;
+		this.compatability = compatability;
+	}
+}
+
+/**
+* @function utility_q2
+*/
+
+module.exports = { utility_q2 :function() { 
+try{
+	rl.question("Enter the t days: ", function(t) {
+		for(var i = 0 ; i &lt; t ; i++) {
+			func(i);
+		}
+		rl.close();
+	});
+}
+catch(err) {
+	console.log(err);
+}
+}}
+
+  	
+function func(t_days) {
+  	var arr_couple = new Array(8);
+  	for (var i = 1 ; i &lt; arr_boys.length ; i++) {        
+		var j = 1;     
+		while(j &lt; 5) { 
+			if(arr_boys[i].budget >= arr_girls[j].maintenance &amp;&amp; arr_girls[j].attractiveness >= arr_boys[i].minAtt &amp;&amp; arr_boys[i].committed == false &amp;&amp; arr_girls[j].committed == false) {
+				console.log(i + "dating" + j);  
+        		arr_boys[i].committed = true;
+        		arr_boys[i].girlname = arr_girls[j].name;
+        		arr_girls[j].boyname = arr_boys[i].name;
+				arr_girls[j].committed = true;
+		    	break;  
+	    	} 
+	    	j++;
+  		}
+  	}
+  	for(var i = 1 ; i &lt; 8 ; i++) {
+		console.log(arr_boys[i]);
+	}
+	for(var i = 1 ; i &lt; 5 ; i++) {
+		console.log(arr_girls[i]);
+	}
+  	arr_gifts.sort(function(a,b) {
+  		return parseFloat(a.price) - parseFloat(b.price);
+  	});
+ 	var k = {value: 1};
+  	var couple_no = 0;
+  	for(i = 1 ; i &lt; arr_boys.length ; i++) {
+  		if(arr_boys[i].committed == true) {
+  			var gift_no = {value : 0};
+      		arr_boys[i].allocate(arr_boys, arr_gifts, i, k, gift_no);
+  			var happiness_b = arr_boys[i].calc_happiness(arr_boys, arr_girls, i);
+      		arr_boys[i]['happiness'] = happiness_b;
+      		for(j = 1 ; j &lt; arr_girls.length ; j++) {
+        		if(arr_boys[i].girlname == arr_girls[j].name) 
+          			break;
+      		}
+  			var happiness_g = arr_girls[j].calc_happiness(arr_boys[i], arr_girls[j]);
+      		arr_girls[j]['happiness'] = happiness_g;
+  			var happiness_c = happiness_b + happiness_g;
+  			var comp = fun2(arr_boys[i],arr_girls);
+  			arr_couple[couple_no++] = new couple(arr_boys[i], arr_girls[j], happiness_c, comp);
+  			fileWrite(arr_boys[i],gift_no.value);
+  		}
+  	}
+  	for(var i = 1 ; i &lt; 8 ; i++) {
+		console.log(arr_boys[i]);
+	}
+	arr_couple.sort(function(a,b) {
+  		return parseFloat(a.happiness_c) - parseFloat(b.happiness_c);
+  	});
+
+	for(var i = 0 ; i &lt; couple_no ; i++) {
+		console.log(arr_couple[i].happiness_c);
+	}
+	var k = 0;
+		for(var i  = 0 ; i &lt; t_days ; i++) {
+			fileWrite_breakup(arr_couple[i], k++);
+			var boy = arr_couple[i].boy.name;
+			var girl = arr_couple[i].girl.name;
+			for(j = 1 ; j &lt; arr_boys.length ; j++) {
+        		if(arr_boys[j].name == boy) 
+          			break;
+      		}
+      		arr_boys[j].committed = false;
+      		for(var j = 1 ; j &lt; arr_girls.length ; j++) {
+        		if(arr_girls[j].name == girl) 
+          			break;
+      		}
+      		arr_girls[j].committed = false;
+
+			assign_new_couple(arr_couple[i].boy, arr_girls);
+			arr_couple[i] = null;
+			delete arr_couple[i];
+		}
+		for(var i = 0 ; i &lt; couple_no ; i++) {
+			console.log(arr_couple[i]);
+		}
+}
+
+function assign_new_couple(arr_boys, arr_girls) {
+	var j = 1;
+	var g = arr_boys.girlname;     
+		while(j &lt; 5) { 
+			if(arr_boys.budget >= arr_girls[j].maintenance &amp;&amp; arr_girls[j].attractiveness >= arr_boys.minAtt &amp;&amp; arr_boys.committed == false &amp;&amp; arr_girls[j].committed == false &amp;&amp; arr_girls[j].name != g) {
+				console.log(i + "dating" + j);  
+        		arr_boys.committed = true;
+        		arr_boys.girlname = arr_girls[j].name;
+        		arr_girls[j].boyname = arr_boys.name;
+				arr_girls[j].committed = true;
+				fileWrite_new_couples(arr_boys, arr_girls[j]);
+		    	break;  
+	    	} 
+	    	j++;
+  		}	
+}
+
+function fileWrite_new_couples(arr_boys, arr_girls) {
+	var x = "\n\nNEW COUPLES:\n\n"
+	fs.appendFile("./list.txt",x);
+	var t = arr_boys.name + " is dating " + arr_girls.name + "\n";
+	fs.appendFile("./list.txt",t);	
+}
+
+function fileWrite_breakup(arr_couple, i) {
+	var y = "\n\n\n"+i + "th DAY:\n\n\n"
+	fs.appendFile("./list.txt",y);
+	var x = "\n\nBREAKUPS:\n\n"
+	fs.appendFile("./list.txt",x);
+	var t = arr_couple.boy.name + " " + arr_couple.girl.name + " broke up :(\n";
+	fs.appendFile("./list.txt",t);	
+}
+
+function fileWrite(arr_boys, gift_no) {
+	var x = "\n\nCOUPLES:\n\n"
+	fs.appendFile("./list.txt",x);
+	var t= arr_boys.name + ' is dating ' + arr_boys.girlname +"\n"+"GIFTS:\n";
+	fs.appendFile("./list.txt",t);
+	for(i = 0 ; i &lt; gift_no ; i++) {
+		var temp = arr_boys.gifts[i];
+		var type = p_json[temp].type;
+		var price = p_json[temp].price;
+		var x = temp+" "+type+" "+price+"\n";
+		fs.appendFile("./list.txt", x, function(err) {
+    	if(err) {
+        	return console.log(err);
+    	}
+    });
+  }
+} 
+
+
+
+/**
+* function to calculate compatability
+*/
+
+function fun2(arr_boys, arr_girls) {
+	var comp;
+	for(i = 1 ; i &lt; arr_girls.length ; i++) {
+		if(arr_boys.girlname == arr_girls[i].name) 
+			break;
+	}
+	var t1 = arr_boys.budget - arr_girls[i].maintenance;
+	var t2 = Math.abs(arr_boys.attractiveness - arr_girls[i].attractiveness);
+	var t3 = Math.abs(arr_boys.intelligence - arr_girls[i].intelligence);
+	comp = t1 + t2 + t3;
+	return comp;
+}
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="boy.html">boy</a></li><li><a href="choosy.html">choosy</a></li><li><a href="couple.html">couple</a></li><li><a href="desperate.html">desperate</a></li><li><a href="essential.html">essential</a></li><li><a href="geeky.html">geeky</a></li><li><a href="generous.html">generous</a></li><li><a href="gifts.html">gifts</a></li><li><a href="girl.html">girl</a></li><li><a href="luxury.html">luxury</a></li><li><a href="miser.html">miser</a></li><li><a href="normal.html">normal</a></li><li><a href="global.html#utility">utility</a></li></ul><h3>Global</h3><ul><li><a href="global.html#fileWrite">fileWrite</a></li><li><a href="global.html#fun2">fun2</a></li><li><a href="global.html#makeBoyObject">makeBoyObject</a></li><li><a href="global.html#makeGifts">makeGifts</a></li><li><a href="global.html#makeGirlObject">makeGirlObject</a></li><li><a href="global.html#utility_q2">utility_q2</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Apr 19 2017 10:28:03 GMT+0530 (IST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
